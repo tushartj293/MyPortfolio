@@ -18,7 +18,18 @@ button{
     &:hover {
         background: darken($primary-color, 10%);
     }
+    &.outline-btn {
+        background: transparent !important;
+        border: 2px solid $body-color;
+        color: $body-color;
+        &:hover {
+            background: $body-color !important;
+            color: $white;
+        }
+    }   
 }
+
+
 .small-btn {
     padding: 8px 20px;
     font-size: $font-size-sm;

@@ -14,17 +14,17 @@
 </head>
 <body>
     <!-- Header -->
-   <!-- <header class="header header-fixed"> -->
+   <!-- <header class="header sticky-header"> -->
    <header class="header">
         <div class="container">
-            <div class="header__inner">
+            <div class="header__inner col-12">
                 <div class="header__logo">Tushar..</div>
                 <nav class="nav">
                     <a class="nav__link active" href="#home">Home</a>
                     <a class="nav__link" href="#about">Services</a>
-                    <a class="nav__link" href="#about">About Me</a>
+                    <a class="nav__link" href="#about">About me</a>
                     <a class="nav__link" href="#portfolio">Portfolio</a>
-                    <a class="nav__link" href="#contact">Contact Me</a>
+                    <a class="nav__link" href="#contact">Contact me</a>
                 </nav>
                 <a class="theme-btn" href="#contact">Hire Me</a>
             </div>
@@ -36,29 +36,43 @@
         <!-- Home Section -->
         <section class="home" id="home">
             <div class="container">
-                <div class="row">
+                <div class="row align-items-center">
                     <div class="col-6">
                         <div class="home-content">
+                            <img class="star-vector" src="assets/images/StarVector.svg" alt="starVector">
                             <span class="home-text">Hi I am</span>
                             <br>
                             <span class="home-name">Tushar Jangid</span>
                             <h1 class="home-profession">Frontend Developer</h1>
                             <ul class="social-links">
-                                <li><a class="link" href="#">Link 1</a></li>
-                                <li><a class="link" href="#">Link 2</a></li>
-                                <li><a class="link" href="#">Link 3</a></li>
-                                <li><a class="link" href="#">Link 4</a></li>
+                                <li><a class="link" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a class="link" href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                <li><a class="link" href="#"><i class="fa-brands fa-dribbble"></i></a></li>
+                                <li><a class="link" href="#"><i class="fa-brands fa-behance"></i></a></li>
                             </ul>
+
+                            <div class="cta-area">
+                                <a href="#contact" class="theme-btn">Hire Me</a>
+                                <a href="#" class="theme-btn outline-btn">Download CV</a>
+                            </div>
                         </div>
                     </div>
-                    <!-- <div class="col-6">
-                        <div class="home_image">
-                            <img src="assets/images/home-image.png" alt="Home Image">
+                    <div class="col-6">
+                        <div class="home-image-wrapper">
+                            <div class="banner-image">
+                                <img src="assets/images/Man.png" alt="Man">
+                            </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Scripts Starts -->
+    <script src="assets/js/jQuery.js"></script><!-- jQuery -->
+    <script src="assets/js/script.js"></script><!-- Custom Js -->
+    <script src="https://kit.fontawesome.com/5fe6cea40e.js" crossorigin="anonymous"></script><!-- Fontawesome Kit -->
+    <!-- Scripts Ends -->
 </body>
 </html>

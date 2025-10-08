@@ -1,0 +1,40 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (max-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (max-width: $breakpoint-xl) { @content; }
+  }
+}
+
+
+// Simple transition mixin + presets
+// Usage: @include transMedium;
+// Or: @include trans((opacity, transform), .2s, ease);
+
+@mixin trans($properties: all, $duration: .3s, $timing: ease, $delay: 0s) {
+  $props: if(type-of($properties) == 'list', $properties, ($properties));
+  $value: ();
+  @each $p in $props {
+    $value: append($value, #{$p} #{$duration} #{$timing} #{$delay}, comma);
+  }
+
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+
+// Preset shortcuts
+@mixin transFast  { @include trans(all, .15s, ease); }
+@mixin transMedium{ @include trans(all, .3s, ease-in-out); }
+@mixin transSlow  { @include trans(all, .5s, ease); }

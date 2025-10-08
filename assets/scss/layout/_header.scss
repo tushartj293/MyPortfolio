@@ -1,0 +1,58 @@
+.header {
+    padding: 1rem 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    .header__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .header__logo {
+            font-family: "K2D", sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: $primary-gradient;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+        .nav {
+            display: flex;
+
+            .nav__link {
+                margin: 0 25px;
+                color: $body-color;
+                text-decoration: none;
+                @include transMedium;
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        .header__btn {
+            background-color: darken($primary-color, 10%);
+            color: $text-white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken($primary-color, 15%);
+            }
+        }
+    }
+    &.header-fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background-color: $secondary-color;
+        z-index: 1000;
+    }
+}

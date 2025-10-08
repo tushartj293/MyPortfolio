@@ -69,7 +69,7 @@
         &::after {
             content: '';
             position: absolute;
-            bottom: 20px;
+            bottom: 40px;
             right: 50%;
             transform: translateX(50%);
             width: 600px;
@@ -81,18 +81,47 @@
 
         .banner-image {
             position: relative;
-            max-width: 520px;
             height: 780px;
             overflow: hidden;
-            border-radius: 50%;
-            mask-image: radial-gradient(circle, #000 70%, transparent 100%);
-            -webkit-mask-image: radial-gradient(circle, #000 70%, transparent 100%);
             img {
                 width: 100%;
-                height: 100%;
+                height: 95%;
                 object-fit: contain;
                 filter: grayscale(100%);
+                border-radius: 45%;
             }
+        }
+    }
+    .stats-box {
+        display: flex;
+        align-items: center;
+        background: rgba($white, 0.04);
+        padding: 24px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        margin-top: 80px;
+        width: fit-content;
+        .stat-item {
+            text-align: start;
+            padding: 6px 30px 6px 0;
+            margin-right: 30px;
+            border-right: 1px solid;
+            &:last-child {
+                border-right: none;
+                margin-right: 0;
+                padding-right: 0;
+            }
+        }
+        .stat-item h2 {
+            color: $primary-color;
+            font-size: 24px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .stat-item p {
+            font-size: 20px;
+            font-weight: 500;
+            color: $text-white;
         }
     }
 }
@@ -110,8 +139,11 @@
         border: 1px solid $border-color;
         background-color: rgba($white, 0.04);
         border-radius: 50%;
-        @include flex-center();
+        @include flex-center;
         @include transMedium;
+        i{
+            line-height: 20px;
+        }
         &:hover{
             border-color: $primary-color;
             color: $text-white;

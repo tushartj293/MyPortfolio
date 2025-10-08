@@ -915,4 +915,35 @@ button {
   font-size: 1.25rem;
 }
 
+.home {
+  display: flex;
+  align-items: center;
+}
+.home .home-content .home-text {
+  font-size: 24px;
+  font-weight: 600;
+  display: inline-block;
+  color: #707070;
+  margin-bottom: 10px;
+}
+.home .home-content .home-name {
+  font-size: 28px;
+  font-weight: 700;
+  color: #959595;
+  display: inline-block;
+}
+.home .home-content .home-profession {
+  font-size: 70px;
+  font-weight: 900;
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 20px;
+  background: linear-gradient(94.36deg, #FD6F00 3.1%, #E46400 94.54%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+}
+
 /*# sourceMappingURL=main.css.map */

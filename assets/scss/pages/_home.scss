@@ -1,0 +1,33 @@
+// Home Section ==
+.home {
+    display: flex;
+    align-items: center;
+    .home-content{
+        .home-text{
+            font-size: 24px;
+            font-weight: 600;
+            display: inline-block;
+            color: $text-color2;
+            margin-bottom: 10px;
+        }
+        .home-name{
+            font-size: 28px;
+            font-weight: 700;
+            color: $body-color;
+            display: inline-block;
+        }
+        .home-profession{
+            font-size: 70px;
+            font-weight: 900;
+            display: block;
+            margin-top: 24px;
+            margin-bottom: 20px;
+            background: $primary-gradient;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            white-space: nowrap;
+        }
+    }
+}

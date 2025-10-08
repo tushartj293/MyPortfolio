@@ -1,0 +1,235 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+html { 
+    scroll-behavior: smooth; 
+}
+a { 
+    text-decoration: none; 
+    color: inherit; 
+}
+ul { 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: $font-main;
+    background: $body-bg; 
+    color: $body-color; 
+}
+
+// Compact responsive containers
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px) !default;
+$gutter-width: 20px !default;
+$grid-breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+) !default;
+
+.container,
+.container-fluid {
+    width: 100%;
+    padding: 0 calc(#{$gutter-width} / 2);
+    margin: 0 auto;
+}
+.container {
+    max-width: 100%;
+    @each $bp, $max in $container-max-widths {
+        $min: map-get($grid-breakpoints, $bp);
+        @if $min {
+            @media (min-width: $min) { max-width: $max; }
+        } @else {
+            max-width: $max;
+        }
+    }
+}
+.container-fluid { max-width: 100%; }
+
+
+// Custome Grids Responsive row/col ==============
+$grid-columns: 12 !default;
+$gutter-width: 20px !default;
+$grid-breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+) !default;
+
+// helper: percentage
+@function col-percentage($cols) {
+    @return (100% / $grid-columns) * $cols;
+}
+
+// helper: breakpoint mixin
+@mixin respond-min($break) {
+    $min: map-get($grid-breakpoints, $break);
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+/* Row and columns */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(#{$gutter-width} / -2);
+    margin-right: calc(#{$gutter-width} / -2);
+
+    &.no-gutters {
+        margin-left: 0;
+        margin-right: 0;
+
+        > .col {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.col {
+    position: relative;
+    width: 100%;
+    padding-left: calc(#{$gutter-width} / 2);
+    padding-right: calc(#{$gutter-width} / 2);
+    min-height: 1px;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+
+    &-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+    }
+}
+
+/* Generate .col-{n} for mobile (default) */
+@for $i from 1 through $grid-columns {
+    .col-#{$i} {
+        flex: 0 0 col-percentage($i);
+        max-width: col-percentage($i);
+    }
+}
+
+/* Generate responsive variants .col-{break}-{n} */
+@each $break, $min in $grid-breakpoints {
+    @for $i from 1 through $grid-columns {
+        @include respond-min($break) {
+            .col-#{$break}-#{$i} {
+                flex: 0 0 col-percentage($i);
+                max-width: col-percentage($i);
+            }
+        }
+    }
+
+    // auto sizing at breakpoint
+    @include respond-min($break) {
+        .col-#{$break}-auto {
+            flex: 0 0 auto;
+            width: auto;
+            max-width: none;
+        }
+    }
+}
+
+/* Utility: full width column */
+.col-12-full {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/* Optionally add ordering and offsets if needed */
+@for $i from 1 through ($grid-columns - 1) {
+    .offset-#{$i} { margin-left: col-percentage($i); }
+
+    @each $break, $min in $grid-breakpoints {
+        @include respond-min($break) {
+            .offset-#{$break}-#{$i} { margin-left: col-percentage($i); }
+        }
+    }
+}
+
+
+// === Font Sizes  ===
+// Headings
+$headings-font-family: $font-main !default;
+$headings-font-weight: 500 !default;
+$headings-line-height: 1.2 !default;
+$headings-sizes: (
+    h1: 2.5rem,
+    h2: 2rem,
+    h3: 1.75rem,
+    h4: 1.5rem,
+    h5: 1.25rem,
+    h6: 1rem
+) !default;
+
+@each $tag, $size in $headings-sizes {
+    #{$tag} {
+        font-family: $headings-font-family;
+        font-weight: $headings-font-weight;
+        line-height: $headings-line-height;
+        font-size: $size;
+        margin-top: 0;
+        margin-bottom: .5rem;
+    }
+}
+
+// Section Heads ==
+.section-head {
+    text-align: center;
+    margin-bottom: 3rem;
+    .section-subtitle {
+        display: block;
+        font-size: $font-size-sm;
+        color: $text-color;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: .5rem;
+    }
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $body-color;
+        margin-bottom: 0;
+    }
+} 
+
+.content-inner{
+    padding-top: 150px;
+}
+
+// Align Properties
+.align-items-center{align-items: center;}
+.align-items-start{align-items: flex-start;}
+.align-items-end{align-items: flex-end;}
+.justify-content-center{justify-content: center;}
+.justify-content-start{justify-content: flex-start;}
+.justify-content-end{justify-content: flex-end;}
+.justify-content-between{justify-content: space-between;}
+
+// scroll bar ==
+body::-webkit-scrollbar {
+    width: 2px;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: darken($border-color, 5%);
+    border-radius: 4px;
+}
+body::-webkit-scrollbar-thumb:hover {
+    background-color: darken($border-color, 10%);
+}
+body::-webkit-scrollbar-track {
+    background: transparent;
+}

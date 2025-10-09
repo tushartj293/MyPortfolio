@@ -1,3 +1,8 @@
+::selection{    
+    background-color: $primary-color;
+    color: $white;
+}
+
 * { 
     margin: 0; 
     padding: 0; 
@@ -189,20 +194,19 @@ $headings-sizes: (
 // Section Heads ==
 .section-head {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 40px;
     .section-subtitle {
         display: block;
-        font-size: $font-size-sm;
+        font-size: 20px;
         color: $text-color;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: .5rem;
+        text-transform: capitalize;
+        margin-bottom: 0;
     }
     .section-title {
-        font-size: 2.5rem;
+        font-size: 40px;
         font-weight: 700;
-        color: $body-color;
-        margin-bottom: 0;
+        color: $text-white;
+        margin-bottom: 15px;
     }
 } 
 
@@ -232,4 +236,12 @@ body::-webkit-scrollbar-thumb:hover {
 }
 body::-webkit-scrollbar-track {
     background: transparent;
+}
+
+
+// Utility Classes
+img {
+    max-width: 100%;
+    vertical-align: middle;
+    height: auto;
 }

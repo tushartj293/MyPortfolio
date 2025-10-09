@@ -1,3 +1,8 @@
+::selection {
+  background-color: #FD6F00;
+  color: #FFFFFF;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -797,21 +802,20 @@ h6 {
 
 .section-head {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 40px;
 }
 .section-head .section-subtitle {
   display: block;
-  font-size: 0.875rem;
+  font-size: 20px;
   color: #BABABA;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+  margin-bottom: 0;
 }
 .section-head .section-title {
-  font-size: 2.5rem;
+  font-size: 40px;
   font-weight: 700;
-  color: #959595;
-  margin-bottom: 0;
+  color: #FFFFFF;
+  margin-bottom: 15px;
 }
 
 .content-inner {
@@ -861,6 +865,12 @@ body::-webkit-scrollbar-thumb:hover {
 
 body::-webkit-scrollbar-track {
   background: transparent;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  height: auto;
 }
 
 @font-face {
@@ -1191,6 +1201,47 @@ button {
   font-size: 20px;
   font-weight: 500;
   color: #FFFFFF;
+}
+
+.about {
+  padding: 150px 0;
+}
+.about .about-image-wrapper {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.about .about-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about .about-image-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+  background: rgba(255, 255, 255, 0.04);
+  z-index: -1;
+  border-radius: 50%;
+  width: 100%;
+  height: 80%;
+  border-radius: 262px 262px 12px 12px;
+}
+.about .about-content {
+  position: relative;
+  z-index: 1;
+}
+.about .about-content .about-text {
+  color: #959595;
+  margin-bottom: 40px;
+  font-size: 20px;
+  line-height: 190%;
+  text-align: justify;
 }
 
 .social-links {

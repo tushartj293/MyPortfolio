@@ -128,7 +128,7 @@
 
 // About Section ==
 .about {
-    padding: 150px 0;
+    padding: 150px 0 0;
     .about-image-wrapper {
         text-align: right;
         display: flex;
@@ -167,6 +167,53 @@
         }
     }
 }   
+
+//Serices Section ==
+.services{  
+    padding: 150px 0 0;
+    .section-head{
+        margin-bottom: 80px;
+    }
+    .service-item{
+        background: rgba($white, 0.04);
+        padding: 34px;
+        border-radius: 24px;
+        text-align: center;
+        @include transMedium;
+        &:hover{
+            background: $primary-gradient;
+            box-shadow: 0 8px 15px rgba($primary-color, 0.3);
+            transform: translateY(-5px);
+            .service-icon{
+                svg{
+                    path { fill: $text-white; }
+                }
+            }   
+            .service-title, .service-text{
+                color: $text-white;
+            }
+        }
+        .service-icon{
+            width: 70px;
+            height: 70px;
+            color: $text-color;
+            @include flex-center;
+            margin: 0 auto 15px auto;
+            @include transMedium;
+        }
+        .service-title{
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: $primary-color;
+        }
+        .service-text{
+            font-size: 20px;
+            line-height: 1.5;
+            color: #575757;
+        }
+    }
+}
 
 .social-links{
     display: flex;

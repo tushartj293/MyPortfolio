@@ -1,5 +1,6 @@
 $primary-color      : #FD6F00;
 $primary-gradient   : linear-gradient(94.36deg, #FD6F00 3.1%, #E46400 94.54%);
+$primary            : $primary-color;
 $secondary-color    : #131212;
 $body-bg            : #121212;
 $body-color         : #959595;
@@ -29,4 +30,35 @@ $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
+
+
+:root{
+    // Color Scheme Variables
+    --primary: $primary;
+    --primary-color: $primary-color;
+    --primary-gradient: $primary-gradient;
+    --secondary-color: $secondary-color;
+    --body-bg: $body-bg;
+    --body-color: $body-color;
+    --text-color: $text-color;
+    --text-color2: $text-color2;
+    --text-white: $text-white;
+    --white: $white;
+    --border-color: $border-color;
+
+    // Font Variables ==
+    --font-main: $font-main;
+    --font-size-base: $font-size-base;
+    --font-size-lg: $font-size-lg;
+    --font-size-sm: $font-size-sm;
+    --font-size-xs: $font-size-xs;
+
+    // Line Heights Variables ==
+    --line-height-base: $line-height-base;  
+    --line-height-lg: $line-height-lg;
+    --line-height-sm: $line-height-sm;
+
+    // Border Radius Variables ==
+    --border-radius: $border-radius;
+}
 
